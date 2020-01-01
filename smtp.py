@@ -8,8 +8,9 @@ def productionServerStart(message):
     smtp_server = "smtp.gmail.com"
     port = 587
     login = "vdmscraperpro@gmail.com"
+    # todo password = input("Type your password and press enter: ")
+    password = "jaimelesnordiques" # todo find a way to encrypt it
     sentTo = "julien.desrochers11@gmail.com"
-    password = input("Type your password and press enter: ")
     context = ssl.create_default_context()
 
     try:
@@ -35,6 +36,7 @@ def debugServerStart(message):
     receiver_email = "mailtrap@example.com"
     smtp_server = "localhost"
     port = 1025
+
     try:
         with smtplib.SMTP(smtp_server, port) as server:
             server.sendmail(sender_email, receiver_email, message)
@@ -60,5 +62,5 @@ def sendEmail():
     Copyright - 2020
      """ % (now.strftime("%d-%m-%Y, %H:%M:%S"))
 
-    # productionServerStart(message)
-    debugServerStart(message)
+    productionServerStart(message)
+    # debugServerStart(message)
