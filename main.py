@@ -8,7 +8,7 @@ HTML_ID_TO_TARGET = "#listing .narrow .end-post-text"  # Le div: "Il n'y a pas d
 def main():
     today = getCurrentTime()
     print("Début du processus - %s" % (today.strftime("%d-%m-%Y, %H:%M:%S")))
-    password = getpass("Inscrire le mot de passe Aubut: ")
+    password = getpass.getpass("Inscrire le mot de passe Marcel: ")
 
     # REPEAT_AFTER = 43200  # 12 hours
     REPEAT_AFTER = 60  # 12 hours
