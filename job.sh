@@ -1,13 +1,10 @@
 #!/bin/sh
+# Job à lancer en debug pour tester le server local SMTP
 
 trap "kill 0" EXIT
 
- # todo remove this might not be useful anymore
- # python -m smtpd -c DebuggingServer -n localhost:1025 &
-
-# start main process
-
-python "C:\Users\User\Desktop\VdmScraperPro\main.py" &
+python -m smtpd -c DebuggingServer -n localhost:1025 &
+python "main.py" &
 
 wait
 

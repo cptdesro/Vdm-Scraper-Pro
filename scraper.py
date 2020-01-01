@@ -3,7 +3,7 @@ import requests
 
 
 def isHtmlElementPresent(html, htmlElementToSearch):
-    htmlStructure = bs4.BeautifulSoup(html)
+    htmlStructure = bs4.BeautifulSoup(html, features="html.parser")
     noJobAvailableHtmlTag = htmlStructure.select(htmlElementToSearch)
 
     return len(noJobAvailableHtmlTag) > 0

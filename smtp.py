@@ -24,7 +24,7 @@ def productionServerStart(message, password):
     except smtplib.SMTPException as e:
         print('SMTP error occurred: ' + str(e))
     else:
-        print('Message envoyé.\nDe ' + login + '\nÀ ' + sentTo)
+        print('Message envoyé.')
     finally:
         server.quit()
 
