@@ -4,12 +4,10 @@ from datetime import datetime
 from socket import gaierror
 
 
-def productionServerStart(message):
+def productionServerStart(message, password):
     smtp_server = "smtp.gmail.com"
     port = 587
     login = "vdmscraperpro@gmail.com"
-    # todo password = input("Type your password and press enter: ")
-    password = "jaimelesnordiques" # todo find a way to encrypt it
     sentTo = "julien.desrochers11@gmail.com"
     context = ssl.create_default_context()
 
@@ -46,7 +44,7 @@ def debugServerStart(message):
         print('Message envoyé.\nDe ' + sender_email + '\nÀ ' + receiver_email)
 
 
-def sendEmail():
+def sendEmail(password):
     now = datetime.now()
     message = """\
     Subject: Nouveaux postes disponibles
@@ -62,5 +60,5 @@ def sendEmail():
     Copyright - 2020
      """ % (now.strftime("%d-%m-%Y, %H:%M:%S"))
 
-    productionServerStart(message)
+    productionServerStart(message, password)
     # debugServerStart(message)

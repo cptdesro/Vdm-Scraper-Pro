@@ -1,4 +1,4 @@
-import time
+import time, getpass
 from utils import getCurrentTime
 import scraper, smtp
 URL_TO_FETCH = "https://ville.montreal.qc.ca/mtl-ti/"
@@ -8,9 +8,10 @@ HTML_ID_TO_TARGET = "#listing .narrow .end-post-text"  # Le div: "Il n'y a pas d
 def main():
     today = getCurrentTime()
     print("Début du processus - %s" % (today.strftime("%d-%m-%Y, %H:%M:%S")))
+    password = getpass("Inscrire le mot de passe Aubut: ")
 
-    REPEAT_AFTER = 43200  # 12 hours
-    # REPEAT_AFTER = 10  # 12 hours
+    # REPEAT_AFTER = 43200  # 12 hours
+    REPEAT_AFTER = 60  # 12 hours
 
     now = time.time()
     repeatAfter = now + REPEAT_AFTER
@@ -24,10 +25,10 @@ def main():
             if scraper.isHtmlElementPresent(responseTextHtml, HTML_ID_TO_TARGET):
                 print("Il n'y a pas d'emploi disponible pour l'instant.\n"
                       "Le processus sera relancé dans %s secondes." % REPEAT_AFTER)
-                smtp.sendEmail()
+                smtp.sendEmail(password)
             else:
                 print("Il y a des emplois disponibles!")
-                # smtp.sendEmail()
+                # smtp.sendEmail(password)
             repeatAfter = time.time() + REPEAT_AFTER  # repeat again in X seconds
 
 
