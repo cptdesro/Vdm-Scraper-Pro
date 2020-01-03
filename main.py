@@ -12,9 +12,8 @@ def main():
           "Début du processus - %s" % (today.strftime("%d-%m-%Y, %H:%M:%S")))
     password = getpass.getpass("Inscrire le mot de passe Marcel: ")
 
-    # REPEAT_AFTER = 43200  # 12 hours
-    REPEAT_AFTER = 10  # 12 hours
-
+    REPEAT_AFTER = 43200  # 12 hours
+    # REPEAT_AFTER = 60  # 60 sec
     now = time.time()
     repeatAfter = now + REPEAT_AFTER
 
