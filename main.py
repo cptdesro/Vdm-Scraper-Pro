@@ -26,10 +26,10 @@ def main():
             if scraper.isHtmlElementPresent(responseTextHtml, HTML_ID_TO_TARGET):
                 print("Il n'y a pas d'emploi disponible pour l'instant.\n"
                       "Le processus sera relancé dans %s secondes." % REPEAT_AFTER)
-                smtp.sendEmail(password)
+                # debug smtp.sendEmail(password)
             else:
                 print("Il y a des emplois disponibles!")
-                # smtp.sendEmail(password)
+                smtp.sendEmail(password)
             repeatAfter = time.time() + REPEAT_AFTER  # repeat again in X seconds
 
 

@@ -20,7 +20,7 @@ Ce processus vérifié à toutes les 12 heures si de nouvelles offres d'emplois 
         2.5 Si on veut revoir le processus : 
             2.5.1 Reconnection à la console ssh de la VM
             2.5.2 $ tmux attach
-            2.5.3 si on veut kill : CTRL + B and type :kill-session
+            2.5.3 si on veut kill : CTRL + B and type :kill-session ou kill -9 <pid>
     
             
      
