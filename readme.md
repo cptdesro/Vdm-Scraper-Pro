@@ -6,6 +6,7 @@ Ce processus vérifié à toutes les 12 heures si de nouvelles offres d'emplois 
 
 # To run - Production (Google Cloud Plateform)
     1. S'assurer que la ligne productionServerStart(message) dans smtp.py est décommenté et que le debug est commenté
+        2.0 Naviguer dans le folder VdmScraperPro
         2.1 S'assurer que la version de pip est à jour : 
             $ curl https://bootstrap.pypa.io/get-pip.py | python
         2.2 Installer les dépendences du fichier requirements :
