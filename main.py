@@ -16,7 +16,7 @@ def main():
     # REPEAT_AFTER = 60  # 60 sec
     now = time.time()
     repeatAfter = now + REPEAT_AFTER
-
+    print("\n...\n")
     while 1:
         if time.time() >= repeatAfter:
             print("LETS PING - %s" % (getCurrentTime().strftime("%d-%m-%Y, %H:%M:%S")))
