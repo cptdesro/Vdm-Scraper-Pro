@@ -1,7 +1,8 @@
-# Vdm Scraper Pro
+# Vdm Scraper Pro (GCP)
 Ce processus vérifié à toutes les 12 heures si de nouvelles offres d'emplois ont été affichées sur le site des TI de la ville de Montréal.
  - Si de nouvelles offres sont présentes, un courriel est envoyé pour notifer l'utilisateur
  - Le processus recommencera dans 12 heures
+ - Le processus est hosté sur une VM dans google cloud platform (GCP)
 
 
 # To run - Production (Google Cloud Plateform)
@@ -35,5 +36,4 @@ Ce processus vérifié à toutes les 12 heures si de nouvelles offres d'emplois 
     
 
 # Todos
-    - plugger le github dans le cloud ssh
     - Si les nouvelles offres ont déjà été vues, ne pas envoyer de courriel
